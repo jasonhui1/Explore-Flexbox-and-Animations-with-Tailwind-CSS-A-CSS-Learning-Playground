@@ -16,7 +16,6 @@ export function Radio({ val, handleClick, active = false }) {
 
 //prepend to keep the same value different (for NthChild)
 export function PropertyRadioComponents({ properties, handleClassName, currentExample = [], prepend = '' }) {
-  const elements = [];
   const [activeIndex, setActiveIndex] = useState(-1)
 
   useEffect(() => {
@@ -25,7 +24,7 @@ export function PropertyRadioComponents({ properties, handleClassName, currentEx
 
   useEffect(() => {
     const intersectProperty = properties.filter(value => currentExample.includes(prepend + value));
-    if (intersectProperty.length < 0) {
+    if (intersectProperty.length === 0) {
       reset()
       return
     }
@@ -49,15 +48,19 @@ export function PropertyRadioComponents({ properties, handleClassName, currentEx
   }
 
   const reset = () => {
-    handleClassName(properties[activeIndex])
-    setActiveIndex(-1)
+    if (activeIndex >= 0) {
+      handleClassName(properties[activeIndex])
+      setActiveIndex(-1)
+    }
   }
+
+  const elements = [];
 
   properties.forEach((property, i) => {
     elements.push(<Radio key={i} handleClick={() => handleClick(i)} val={property} active={i === activeIndex} />)
   })
 
-  elements.push(<button className={overrideTailwindClasses('btn btn-warning ml-auto mr-6')} onClick={reset}>Reset</button>)
+  elements.push(<button key={'reset-btn'} className={overrideTailwindClasses('btn btn-warning ml-auto mr-6')} onClick={reset}>Reset</button>)
 
 
   return <div className='flex flex-wrap gap-4 justify-start'>{elements}</div>;

@@ -7,10 +7,13 @@ import TransitionComponent from './Components/TransitionComponent';
 
 
 function App() {
+  const [current, setCurrent] = useState(0)
 
   return (
     <div>
-      <TransitionComponent />
+      <FlexComponent active={true}/>
+      <PositionComponent active={false}/>
+      <TransitionComponent active={false}/> 
     </div>
   )
 }

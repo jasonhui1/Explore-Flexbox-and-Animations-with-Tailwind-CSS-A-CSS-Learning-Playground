@@ -10,3 +10,8 @@ hr {
     background-color: black;
     height: 1px;
   }
+
+h3 {
+  font-size:x-large;
+  font-weight: 800;
+}

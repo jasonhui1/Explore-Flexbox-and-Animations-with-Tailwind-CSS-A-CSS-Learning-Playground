@@ -1,12 +1,14 @@
-import {useState } from 'react';
+import { useState } from 'react';
 import { PropertyCheckboxComponents } from './Checkbox';
+import LeftLayout from './LeftLayout';
 import { PropertyRadioComponents } from './Radio';
+import RightLayout from './RightLayout';
 
 export function MyComponent({ className }) {
   return <div className={className}>Button</div>;
 }
 
-export default function TransitionComponent() {
+export default function TransitionComponent({active=true}) {
   const [className, setClassName] = useState(['bg-blue-500', 'text-3xl', 'w-96', 'h-96', 'hover:bg-red-500', 'border-solid', 'border-8', 'border-black', 'flex', 'justify-center', 'items-center', 'text-white', 'shadow-lg', 'shadow-orange-300'])
   const [example, setExample] = useState([])
 
@@ -43,47 +45,51 @@ export default function TransitionComponent() {
   examples.push(['duration-1000', 'hover:bg-opacity-50', 'hover:text-opacity-50', 'hover:border-opacity-20'])
   examples.push(['duration-1000', 'hover:translate-x-full'])
 
-
+  let CLASSNAME = ['flex','overflow-auto']
+  if (!active) {
+    CLASSNAME.push('hidden')
+  }
+  CLASSNAME=CLASSNAME.join(' ')
 
   return (
-    <div className='flex overflow-auto'>
-      <div className=' flex-1 flex-shrink-0 overflow-auto top-rounded-3xl p-3 outline-1 bg-blue-100 h-screen sticky top-0  '>
-        <div className='flex  flex-col gap-6 mt-6 border'>
+    <div className={CLASSNAME}>
+      <LeftLayout>
 
-          <div className='flex flex-col gap-2'>
-            <h3>Transition</h3>
-            <PropertyRadioComponents properties={transitionProperty} handleClassName={handleClassName} currentExample={example} />
-          </div>
-          <hr></hr>
+        <div className='flex flex-col gap-2'>
+          <h3>Transition</h3>
+          <PropertyRadioComponents properties={transitionProperty} handleClassName={handleClassName} currentExample={example} />
+        </div>
+        <hr></hr>
 
-          <div className='flex flex-col gap-2'>
-            <h3>Duration/ Delay</h3>
+        <div className='flex flex-col gap-2'>
+          <h3>Duration/ Delay</h3>
 
-            <PropertyRadioComponents properties={durationProperty} handleClassName={handleClassName} currentExample={example} />
-            <PropertyRadioComponents properties={delayProperty} handleClassName={handleClassName} currentExample={example} />
+          <PropertyRadioComponents properties={durationProperty} handleClassName={handleClassName} currentExample={example} />
+          <PropertyRadioComponents properties={delayProperty} handleClassName={handleClassName} currentExample={example} />
 
-          </div>
-          <hr></hr>
+        </div>
+        <hr></hr>
 
-          <div className='flex flex-col gap-2'>
-            <h3>opacityProperty</h3>
+        <div className='flex flex-col gap-2'>
+          <h3>OpacityProperty</h3>
 
-            <PropertyCheckboxComponents properties={opacityProperty} handleClassName={handleClassName} currentExample={example} />
+          <PropertyCheckboxComponents properties={opacityProperty} handleClassName={handleClassName} currentExample={example} />
 
-          </div>
-          <hr></hr>
+        </div>
+        <hr></hr>
 
 
-          <div className='flex flex-col gap-2'>
-            <h3>Transform</h3>
+        <div className='flex flex-col gap-2'>
+          <h3>Transform</h3>
 
-            <PropertyRadioComponents properties={translateProperty} handleClassName={handleClassName} currentExample={example} />
-            <PropertyRadioComponents properties={rotateProperty} handleClassName={handleClassName} currentExample={example} />
-            <PropertyRadioComponents properties={scaleProperty} handleClassName={handleClassName} currentExample={example} />
-          </div>
-          <hr></hr>
+          <PropertyRadioComponents properties={translateProperty} handleClassName={handleClassName} currentExample={example} />
+          <PropertyRadioComponents properties={rotateProperty} handleClassName={handleClassName} currentExample={example} />
+          <PropertyRadioComponents properties={scaleProperty} handleClassName={handleClassName} currentExample={example} />
+        </div>
+        <hr></hr>
 
-          {/* <div className='flex flex-col gap-2'>
+
+        {/* <div className='flex flex-col gap-2'>
             <h3>Shadow</h3>
 
             <PropertyRadioComponents properties={shadowProperty} handleClassName={handleClassName} currentExample={example} />
@@ -91,31 +97,28 @@ export default function TransitionComponent() {
           </div>
           <hr></hr> */}
 
-          <div className='flex flex-col gap-2'>
-            <h3>Box model</h3>
+        <div className='flex flex-col gap-2'>
+          <h3>Box model</h3>
 
-            <PropertyRadioComponents properties={boxProperty} handleClassName={handleClassName} currentExample={example} />
-
-          </div>
-          <hr></hr>
-
-
-          <div className='flex flex-col gap-2'>
-            {examples.map((example) => {
-
-              return <button className='btn capitalize' onClick={() => setExample(example)}> Example: {example.join(' ,')} </button>
-            })}
-          </div>
-
+          <PropertyRadioComponents properties={boxProperty} handleClassName={handleClassName} currentExample={example} />
 
         </div>
-      </div>
+        <hr></hr>
 
 
-      <div className='flex-1 rounded-3xl overflow-auto  p-3 outline-1 bg-yellow-100 h-screen'>
-          
+        <div className='flex flex-col gap-2'>
+          {examples.map((example,i) => {
+
+            return <button key={i} className='btn capitalize' onClick={() => setExample(example)}> Example: {example.join(' ,')} </button>
+          })}
+        </div>
+
+      </LeftLayout>
+
+      <RightLayout>
+
+
         <div className='flex justify-center items-center h-screen '>
-            
           <MyComponent className={className.join(' ')} />
         </div>
 
@@ -123,8 +126,7 @@ export default function TransitionComponent() {
           <p>{className.join(' ')}</p>
         </div>
 
-
-      </div>
+      </RightLayout>
 
     </div>
   )
