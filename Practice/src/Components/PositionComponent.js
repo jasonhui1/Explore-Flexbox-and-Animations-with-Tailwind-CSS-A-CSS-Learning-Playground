@@ -111,6 +111,9 @@ export default function PositionComponent({active=true}) {
           })}
         </div>
 
+        <div className='h-12'></div>
+
+
       </LeftLayout>
 
       <RightLayout>

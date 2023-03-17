@@ -128,6 +128,8 @@ export default function FlexComponent({ active = true }) {
                     })}
                 </div>
 
+                <div className='h-12'></div>
+
 
             </LeftLayout>
 
@@ -135,6 +137,7 @@ export default function FlexComponent({ active = true }) {
             <RightLayout>
                 <MyComponent number={number} className={className.join(' ')} childrenClassName={childrenClassName.join(' ')} childrenNthClassName={childrenNthClassName.join(' ')} childrenNth={childrenNth} />
             </RightLayout>
+            
 
         </div>
 

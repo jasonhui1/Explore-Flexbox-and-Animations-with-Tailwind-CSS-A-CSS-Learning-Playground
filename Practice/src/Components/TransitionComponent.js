@@ -113,6 +113,9 @@ export default function TransitionComponent({active=true}) {
           })}
         </div>
 
+        <div className='h-12'></div>
+
+
       </LeftLayout>
 
       <RightLayout>
@@ -125,6 +128,8 @@ export default function TransitionComponent({active=true}) {
         <div className=''>
           <p>{className.join(' ')}</p>
         </div>
+        <div className='h-12'></div>
+
 
       </RightLayout>
 
