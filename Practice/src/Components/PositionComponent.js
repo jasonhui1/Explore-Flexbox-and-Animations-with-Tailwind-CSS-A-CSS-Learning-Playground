@@ -16,11 +16,11 @@ export function MyComponent({ number, className, childrenClassName, childrenNthC
     if (i === childrenNth) {
 
       box =
-        <div className={overrideTailwindClasses(childrenClassName)} key={i}>{i}
+        <div className={overrideTailwindClasses(childrenClassName)} key={i}>
           <div className={overrideTailwindClasses(childrenNthClassName)}> ME
           </div>
 
-        </div>
+          {i}</div>
     }
 
     elements.push(box);
@@ -80,8 +80,8 @@ export default function PositionComponent() {
   const examples = []
 
   examples.push(['sticky', 'top-0'])
-  examples.push(['relative', 'left-16'])
-  examples.push(['parent_relative', 'absolute', 'bottom-16', 'right-16'])
+  examples.push(['relative', 'left-16', 'bottom-16'])
+  examples.push(['parent_relative', 'absolute', 'right-16'])
   examples.push(['fixed', 'bottom-16'])
 
 

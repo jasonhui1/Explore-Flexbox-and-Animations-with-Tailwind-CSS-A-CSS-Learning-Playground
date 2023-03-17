@@ -25,7 +25,6 @@ export function PropertyRadioComponents({ properties, handleClassName, currentEx
 
   useEffect(() => {
     const intersectProperty = properties.filter(value => currentExample.includes(prepend + value));
-    console.log('intersectProperty', properties, currentExample, prepend, intersectProperty)
     if (intersectProperty.length < 0) {
       reset()
       return
