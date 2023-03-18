@@ -3,13 +3,14 @@ import './index.css';
 import FlexComponent from './Components/FlexComponent';
 import PositionComponent from './Components/PositionComponent';
 import TransitionComponent from './Components/TransitionComponent';
+import AnimationComponent from './Components/AnimationComponent';
 
 
 
 export default function App() {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(3)
 
-  const pages = ['Flex', 'Position', 'Transition']
+  const pages = ['Flex', 'Position', 'Transition', 'Animation']
 
   return (
 
@@ -19,10 +20,11 @@ export default function App() {
           return <button className='flex-1 btn btn-info opacity-30 hover:opacity-100 text-xl capitalize' onClick={() => setCurrent(i)}>{name}</button>
         })}
       </div>
-      <div className='relative'>
+      <div className='relative space-x-0'>
         <FlexComponent active={current === 0} />
         <PositionComponent active={current === 1} />
         <TransitionComponent active={current === 2} />
+        <AnimationComponent active={current === 3} />
       </div>
     </div>
   )

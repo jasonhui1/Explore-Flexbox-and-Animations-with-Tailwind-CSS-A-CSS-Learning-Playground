@@ -36,8 +36,6 @@ export default function TransitionComponent({active=true}) {
 
   const opacityProperty = ['hover:opacity-50', 'hover:bg-opacity-50', 'hover:text-opacity-50', 'hover:border-opacity-20']
 
-  const boxProperty = ['hover:ml-24']
-
   const examples = []
 
   examples.push(['duration-1000', 'hover:scale-150'])
@@ -55,7 +53,7 @@ export default function TransitionComponent({active=true}) {
     <div className={CLASSNAME}>
       <LeftLayout>
 
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col'>
           <h3>Transition</h3>
           <PropertyRadioComponents properties={transitionProperty} handleClassName={handleClassName} currentExample={example} />
         </div>
@@ -70,7 +68,7 @@ export default function TransitionComponent({active=true}) {
         </div>
         <hr></hr>
 
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col'>
           <h3>OpacityProperty</h3>
 
           <PropertyCheckboxComponents properties={opacityProperty} handleClassName={handleClassName} currentExample={example} />
@@ -96,14 +94,6 @@ export default function TransitionComponent({active=true}) {
 
           </div>
           <hr></hr> */}
-
-        <div className='flex flex-col gap-2'>
-          <h3>Box model</h3>
-
-          <PropertyRadioComponents properties={boxProperty} handleClassName={handleClassName} currentExample={example} />
-
-        </div>
-        <hr></hr>
 
 
         <div className='flex flex-col gap-2'>

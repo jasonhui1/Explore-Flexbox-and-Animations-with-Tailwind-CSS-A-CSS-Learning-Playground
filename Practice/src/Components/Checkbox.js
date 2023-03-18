@@ -7,7 +7,7 @@ export function CheckBox({ val, handleClick, checked = false }) {
   return (
     <>
       <label className={classN}>
-        <input className="btn hidden capitalize " type="checkbox" value={val} name={val} onClick={handleClick} />
+        <input className="btn hidden capitalize" type="checkbox" value={val} name={val} onClick={handleClick} />
 
         {val}</label>
     </>

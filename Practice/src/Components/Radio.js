@@ -3,7 +3,7 @@ import { overrideTailwindClasses } from 'tailwind-override'
 
 
 export function Radio({ val, handleClick, active = false }) {
-  const classN = 'btn capitalize ' + (active && 'btn-success')
+  const classN = 'btn capitalize  border border-red-200 rounded-3xl ' + (active && 'btn-success')
 
   return (
     <>
