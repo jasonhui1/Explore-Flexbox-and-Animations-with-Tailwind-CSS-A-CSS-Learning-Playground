@@ -3,7 +3,7 @@ import './index.css';
 import FlexComponent from './Components/FlexComponent';
 import PositionComponent from './Components/PositionComponent';
 import TransitionComponent from './Components/TransitionComponent';
-import AnimationComponent from './Components/AnimationComponent';
+import AnimationComponent from './Pages/AnimationComponent';
 import ClipAnimationComponent from './Components/ClipAnimationComponent';
 import BackgroundComponent from './Components/BackgroundComponent';
 

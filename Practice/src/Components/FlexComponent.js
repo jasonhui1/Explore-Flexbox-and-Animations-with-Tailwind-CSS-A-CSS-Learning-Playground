@@ -4,6 +4,7 @@ import { overrideTailwindClasses } from 'tailwind-override'
 import { PropertyRadioComponents } from './Radio';
 import LeftLayout from './LeftLayout';
 import RightLayout from './RightLayout';
+import { ExamplesComponent, MultipleGroupComponent, SingleGroupComponent } from './LayoutComponents';
 
 
 export default function FlexComponent({ active = true }) {
@@ -97,39 +98,32 @@ export default function FlexComponent({ active = true }) {
                 </div>
                 <hr></hr>
 
-                <div>
+                <SingleGroupComponent title='flexChildrenProperty'>
                     <PropertyCheckboxComponents properties={flexChildrenProperty} handleClassName={handleChildrenClassName} currentExample={example} />
-                </div>
+                </SingleGroupComponent>
 
-                <div>
-                    Nth: <input type={number} className='w-40' value={childrenNth} onChange={(e) => handleChildrenNth(e)} />
+                <SingleGroupComponent title='Nth:'>
+                    <input type={number} className='w-40' value={childrenNth} onChange={(e) => handleChildrenNth(e)} />
                     <PropertyCheckboxComponents properties={flexNthChildrenProperty} handleClassName={handleNthChildrenClassName} currentExample={example} prepend='Nth_' />
-                </div>
-                <hr></hr>
+                </SingleGroupComponent>
 
-                <div className='flex flex-col gap-2'>
-                    <h3>Alignment</h3>
+
+                <MultipleGroupComponent title='Alignment'>
                     <PropertyRadioComponents properties={alignProperty} handleClassName={handleClassName} currentExample={example} />
                     <PropertyRadioComponents properties={itemProperty} handleClassName={handleClassName} currentExample={example} />
-                </div>
-                <hr></hr>
+
+                </MultipleGroupComponent>
 
 
-                <div className='flex flex-col gap-2'>
-                    <h3>Full Viewport Height/ Gap</h3>
+                <MultipleGroupComponent title='Full Viewport Height/ Gap'>
                     <PropertyRadioComponents properties={otherProperty} handleClassName={handleClassName} currentExample={example} />
                     <PropertyRadioComponents properties={gapProperty} handleClassName={handleClassName} currentExample={example} />
-                </div>
 
-                <hr></hr>
-                <div className='flex flex-col gap-2'>
-                    {examples.map((example, i) => {
-                        return <button key={i} className='btn capitalize' onClick={() => setExample(example)}> Example: {example.join(' ,')} </button>
-                    })}
-                </div>
+                </MultipleGroupComponent>
+
+                <ExamplesComponent examples={examples} setExample={setExample}/>
 
                 <div className='h-12'></div>
-
 
             </LeftLayout>
 
@@ -137,7 +131,7 @@ export default function FlexComponent({ active = true }) {
             <RightLayout>
                 <MyComponent number={number} className={className.join(' ')} childrenClassName={childrenClassName.join(' ')} childrenNthClassName={childrenNthClassName.join(' ')} childrenNth={childrenNth} />
             </RightLayout>
-            
+
 
         </div>
 
@@ -150,10 +144,6 @@ export function MyComponent({ number, className, childrenClassName, childrenNthC
     const elements = [];
 
     const childClassName = 'btn w-40 ' + childrenClassName
-    console.log('className', className)
-    console.log('childrenClassName', childrenClassName)
-    console.log('childrenNthClassName', childrenNthClassName)
-
     for (let i = 0; i < number; i++) {
         // const CN = childClassName + ( childrenClassName)
         let classNameNth = childClassName

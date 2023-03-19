@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { PropertyCheckboxComponents } from './Checkbox';
-import LeftLayout from './LeftLayout';
-import { PropertyRadioComponents } from './Radio';
-import RightLayout from './RightLayout';
+import { PropertyCheckboxComponents } from '../Components/Checkbox';
+import LeftLayout from '../Components/LeftLayout';
+import { PropertyRadioComponents } from '../Components/Radio';
+import RightLayout from '../Components/RightLayout';
 import {
     ExamplesComponent,
     SingleGroupComponent,
     MultipleGroupComponent
-} from './LayoutComponents';
+} from '../Components/LayoutComponents';
 
 export function MyComponent({ className }) {
   console.log('className', className)
