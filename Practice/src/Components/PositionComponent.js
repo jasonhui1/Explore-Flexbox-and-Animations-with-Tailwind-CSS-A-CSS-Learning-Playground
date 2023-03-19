@@ -3,6 +3,11 @@ import { overrideTailwindClasses } from 'tailwind-override'
 import { PropertyRadioComponents } from './Radio';
 import LeftLayout from './LeftLayout';
 import RightLayout from './RightLayout';
+import {
+  MultipleGroupComponent,
+  SingleGroupComponent,
+  ExamplesComponent
+} from './LayoutComponents';
 
 export function MyComponent({ number, className, childrenClassName, childrenNthClassName, childrenNth }) {
   const elements = [];
@@ -27,7 +32,7 @@ export function MyComponent({ number, className, childrenClassName, childrenNthC
 }
 
 
-export default function PositionComponent({active=true}) {
+export default function PositionComponent({ active = true }) {
   const [number, setNumber] = useState(20)
   const [className, setClassName] = useState(['outline', 'flex-wrap', 'gap-24', 'justify-center', 'flex'])
   const [childrenClassName, setChildrenClassName] = useState(['outline', 'text-3xl', 'w-96', 'h-96', 'mt-6'])
@@ -48,9 +53,9 @@ export default function PositionComponent({active=true}) {
   const handleChildrenClassName = (newName) => {
     const exist = childrenClassName.includes(newName)
     if (!exist) {
-      setChildrenClassName(childrenClassName=>[...childrenClassName, newName])
+      setChildrenClassName(childrenClassName => [...childrenClassName, newName])
     } else {
-      setChildrenClassName(childrenClassName=>childrenClassName.filter((name) => name !== newName))
+      setChildrenClassName(childrenClassName => childrenClassName.filter((name) => name !== newName))
     }
   }
 
@@ -76,44 +81,36 @@ export default function PositionComponent({active=true}) {
 
   const examples = []
   examples.push(['sticky', 'top-0'])
-  examples.push(['relative', 'left-16', 'bottom-16'])
-  examples.push(['parent_relative', 'absolute', 'right-16'])
+  examples.push(['relative', 'left-16', 'top-16'])
+  examples.push(['parent_relative', 'absolute', 'right-16', 'bottom-16'])
   examples.push(['fixed', 'bottom-16'])
 
   let CLASSNAME = ['flex']
   if (!active) {
     CLASSNAME.push('hidden')
   }
-  CLASSNAME=CLASSNAME.join(' ')
+  CLASSNAME = CLASSNAME.join(' ')
 
   return (
     <div className={CLASSNAME}>
       <LeftLayout>
-        <div>
-          <h3 className='text-3xl font-bold text-gray-500'>Parent</h3>
+
+        <SingleGroupComponent title='Parent'>
           <PropertyRadioComponents properties={parentPositionProperty} handleClassName={handleChildrenClassName} currentExample={example} prepend='parent_' />
 
-        </div>
+        </SingleGroupComponent>
 
-        <hr></hr>
-        <div className='flex flex-col  gap-4'>
-          <h3 className='text-3xl font-bold text-gray-500'>Nth Child: </h3> <input type={number} className='w-40' value={childrenNth} onChange={(e) => handleChildrenNth(e)}/>
+        <MultipleGroupComponent title='Nth Child:'>
+          <input type={number} className='w-40' value={childrenNth} onChange={(e) => handleChildrenNth(e)} />
           <PropertyRadioComponents properties={childPositionProperty} handleClassName={handleNthChildrenClassName} currentExample={example} />
           <PropertyRadioComponents properties={yProperty} handleClassName={handleNthChildrenClassName} currentExample={example} />
           <PropertyRadioComponents properties={xProperty} handleClassName={handleNthChildrenClassName} currentExample={example} />
-        </div>
-        <hr></hr>
 
-        <div className='flex flex-col gap-2'>
-          {examples.map((example, i) => {
+        </MultipleGroupComponent>
 
-            return <button key={i} className='btn capitalize' onClick={() => setExample(example)}> Example: {example.join(' ,')} </button>
-          })}
-        </div>
+        <ExamplesComponent examples={examples} setExample={setExample} />
 
         <div className='h-12'></div>
-
-
       </LeftLayout>
 
       <RightLayout>
