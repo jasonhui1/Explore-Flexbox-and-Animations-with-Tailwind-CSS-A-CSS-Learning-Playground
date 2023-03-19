@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { PropertyCheckboxComponents } from './Checkbox';
+import { PropertyCheckboxComponents } from '../Components/Checkbox';
 import { overrideTailwindClasses } from 'tailwind-override'
-import { PropertyRadioComponents } from './Radio';
-import LeftLayout from './LeftLayout';
-import RightLayout from './RightLayout';
-import { ExamplesComponent, MultipleGroupComponent, SingleGroupComponent } from './LayoutComponents';
+import { PropertyRadioComponents } from '../Components/Radio';
+import LeftLayout from '../Components/LeftLayout';
+import RightLayout from '../Components/RightLayout';
+import { ExamplesComponent, MultipleGroupComponent, SingleGroupComponent } from '../Components/LayoutComponents';
 
 
 export default function FlexComponent({ active = true }) {

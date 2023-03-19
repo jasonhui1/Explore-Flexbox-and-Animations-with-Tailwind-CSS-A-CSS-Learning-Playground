@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { overrideTailwindClasses } from 'tailwind-override'
-import { PropertyRadioComponents } from './Radio';
-import LeftLayout from './LeftLayout';
-import RightLayout from './RightLayout';
+;
+import LeftLayout from '../Components/LeftLayout';
 import {
-  MultipleGroupComponent,
-  SingleGroupComponent,
-  ExamplesComponent
-} from './LayoutComponents';
+    SingleGroupComponent,
+    MultipleGroupComponent,
+    ExamplesComponent
+} from '../Components/LayoutComponents';
+import { PropertyRadioComponents } from '../Components/Radio';
+import RightLayout from '../Components/RightLayout';
 
 export function MyComponent({ number, className, childrenClassName, childrenNthClassName, childrenNth }) {
   const elements = [];

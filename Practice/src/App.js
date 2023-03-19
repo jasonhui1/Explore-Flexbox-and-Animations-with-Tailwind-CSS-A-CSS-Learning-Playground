@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import './index.css';
-import FlexComponent from './Components/FlexComponent';
-import PositionComponent from './Components/PositionComponent';
-import TransitionComponent from './Components/TransitionComponent';
+import FlexComponent from './Pages/FlexComponent';
+import PositionComponent from './Pages/PositionComponent';
+import TransitionComponent from './Pages/TransitionComponent';
 import AnimationComponent from './Pages/AnimationComponent';
-import ClipAnimationComponent from './Components/ClipAnimationComponent';
-import BackgroundComponent from './Components/BackgroundComponent';
+import ClipAnimationComponent from './Pages/ClipAnimationComponent';
+import BackgroundComponent from './Pages/BackgroundComponent';
 
 
 

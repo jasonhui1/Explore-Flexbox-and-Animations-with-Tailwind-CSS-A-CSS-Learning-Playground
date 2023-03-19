@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import { PropertyCheckboxComponents } from './Checkbox';
-import LeftLayout from './LeftLayout';
-import { PropertyRadioComponents } from './Radio';
-import RightLayout from './RightLayout';
-import {
-    ExamplesComponent,
-    SingleGroupComponent,
-    MultipleGroupComponent
-} from './LayoutComponents';
+import LeftLayout from '../Components/LeftLayout';
+import { SingleGroupComponent, ExamplesComponent } from '../Components/LayoutComponents';
+import { PropertyRadioComponents } from '../Components/Radio';
+import RightLayout from '../Components/RightLayout';
+
 
 export function MyComponent({ layoutClassName, className }) {
     let grids = [];
