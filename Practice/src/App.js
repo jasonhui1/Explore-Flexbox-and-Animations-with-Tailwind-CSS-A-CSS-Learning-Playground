@@ -4,13 +4,15 @@ import FlexComponent from './Components/FlexComponent';
 import PositionComponent from './Components/PositionComponent';
 import TransitionComponent from './Components/TransitionComponent';
 import AnimationComponent from './Components/AnimationComponent';
+import ClipAnimationComponent from './Components/ClipAnimationComponent';
+import BackgroundComponent from './Components/BackgroundComponent';
 
 
 
 export default function App() {
-  const [current, setCurrent] = useState(3)
+  const [current, setCurrent] = useState(4)
 
-  const pages = ['Flex', 'Position', 'Transition', 'Animation']
+  const pages = ['Flex', 'Position', 'Transition', 'Animation', 'Clip animation', 'Background']
 
   return (
 
@@ -25,6 +27,8 @@ export default function App() {
         <PositionComponent active={current === 1} />
         <TransitionComponent active={current === 2} />
         <AnimationComponent active={current === 3} />
+        <ClipAnimationComponent active={current === 4} />
+        <BackgroundComponent active={current===5}/>
       </div>
     </div>
   )

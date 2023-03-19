@@ -19,4 +19,42 @@ h3 {
 h1 {
   font-size:xx-large;
   font-weight: 800;
+  animation:fade;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.parallax {
+  /* Set a specific height */
+  height: 400px;
+  /* max-height: 100%;  */
+  width: 100%;
+
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain; */
 }

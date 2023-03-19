@@ -5,7 +5,7 @@ import { PropertyRadioComponents } from './Radio';
 import RightLayout from './RightLayout';
 
 export function MyComponent({ className }) {
-  return <div className={className}>Button</div>;
+  return <div className={className}>Hover me</div>;
 }
 
 export default function TransitionComponent({active=true}) {
@@ -39,7 +39,7 @@ export default function TransitionComponent({active=true}) {
   const examples = []
 
   examples.push(['duration-1000', 'hover:scale-150'])
-  examples.push(['delay-100', 'duration-1000', 'hover:ml-24'])
+  examples.push(['delay-100', 'duration-1000', 'hover:rotate-180'])
   examples.push(['duration-1000', 'hover:bg-opacity-50', 'hover:text-opacity-50', 'hover:border-opacity-20'])
   examples.push(['duration-1000', 'hover:translate-x-full'])
 
