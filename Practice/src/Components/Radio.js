@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { overrideTailwindClasses } from 'tailwind-override'
 
 
@@ -17,20 +17,26 @@ export function Radio({ val, handleClick, active = false }) {
 //prepend to keep the same value different (for NthChild)
 export function PropertyRadioComponents({ properties, handleClassName, currentExample = [], prepend = '' }) {
   const [activeIndex, setActiveIndex] = useState(-1)
+  const lastActiveIndex = useRef(-1)
 
   useEffect(() => {
-    handleClassName(properties[activeIndex])
+    if (lastActiveIndex.current >= 0) handleClassName(properties[lastActiveIndex.current])
+    if (activeIndex >= 0) handleClassName(properties[activeIndex])
+
+    lastActiveIndex.current = activeIndex
+
   }, [activeIndex])
 
   useEffect(() => {
     const intersectProperty = properties.filter(value => currentExample.includes(prepend + value));
+
+    //Example does contain any class name for the radio components
     if (intersectProperty.length === 0) {
       reset()
       return
     }
     const index = properties.findIndex(name => name === intersectProperty[0])
     if (index !== activeIndex) {
-      handleClassName(properties[activeIndex])
       setActiveIndex(index)
     }
 
@@ -40,7 +46,6 @@ export function PropertyRadioComponents({ properties, handleClassName, currentEx
   const handleClick = (new_index) => {
     //Turn off
     if (new_index !== activeIndex) {
-      handleClassName(properties[activeIndex])
       setActiveIndex(new_index)
     } else {
       reset()
@@ -48,10 +53,7 @@ export function PropertyRadioComponents({ properties, handleClassName, currentEx
   }
 
   const reset = () => {
-    if (activeIndex >= 0) {
-      handleClassName(properties[activeIndex])
-      setActiveIndex(-1)
-    }
+    if (activeIndex >= 0) setActiveIndex(-1)
   }
 
   const elements = [];
