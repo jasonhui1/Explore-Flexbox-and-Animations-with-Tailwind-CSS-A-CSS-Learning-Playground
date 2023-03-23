@@ -65,15 +65,12 @@ export function PropertyCheckboxComponents({ properties, handleClassName, curren
     setcheckState(checkState => checkState.map((_) => false))
   }
 
-  const elements = [];
-
-  properties.forEach((property, i) => {
-    elements.push(<CheckBox key={i} handleClick={() => handleClick(i)} val={property} checked={checkState[i]} />)
-  })
-
-  elements.push(<button key='reset-btn' className={('btn btn-warning ml-auto mr-6')} onClick={reset}>Reset</button>)
-
-
-  return <div className='flex flex-wrap gap-4'>{elements}</div>;
-}
+  return (
+    <div className='flex flex-wrap gap-4'>
+        {properties.map((property,i) =>{
+          return <CheckBox key={i} handleClick={() => handleClick(i)} val={property} checked={checkState[i]} />
+        })}
+        <button key='reset-btn' className={('btn btn-warning ml-auto mr-6')} onClick={reset}>Reset</button>
+    </div>);
+} 
 

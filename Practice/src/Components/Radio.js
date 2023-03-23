@@ -56,15 +56,14 @@ export function PropertyRadioComponents({ properties, handleClassName, currentEx
     if (activeIndex >= 0) setActiveIndex(-1)
   }
 
-  const elements = [];
 
-  properties.forEach((property, i) => {
-    elements.push(<Radio key={i} handleClick={() => handleClick(i)} val={property} active={i === activeIndex} />)
-  })
+  return (
+  <div className='flex flex-wrap gap-4 justify-start'>
+    {properties.map((property, i) => {
+      return <Radio key={i} handleClick={() => handleClick(i)} val={property} active={i === activeIndex}  />
+    })}
+    <button key='reset-btn' className={('btn btn-warning ml-auto mr-6')} onClick={reset}>Reset</button>
 
-  elements.push(<button key={'reset-btn'} className={overrideTailwindClasses('btn btn-warning ml-auto mr-6')} onClick={reset}>Reset</button>)
-
-
-  return <div className='flex flex-wrap gap-4 justify-start'>{elements}</div>;
+  </div>);
 }
 
