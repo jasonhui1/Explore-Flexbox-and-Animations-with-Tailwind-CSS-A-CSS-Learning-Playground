@@ -10,8 +10,9 @@ export function MyComponent({ layoutClassName, className }) {
     return (
         <div className={layoutClassName}>
 
-            <div className={className} style={{ 'background-image': 'url(https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)' }}>
+            <div className={className} style={{ 'backgroundImage': 'url(https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)' }}>
             </div>
+            {/* <img className={className} src='https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'></img> */}
         </div>
     );
 }
@@ -39,7 +40,7 @@ export default function ClipAnimationComponent({ active = true }) {
             setClassName(className => className.filter((name) => name !== newName))
         }
     }
-    const animation = ['animate-wiggle',]
+    const animation = ['animate-wiggle', 'animate-clip']
     const animation_in = ['fade-in', 'spin-in-45', 'zoom-in-150', 'slide-in-from-bottom',]
     const animation_inout = ['animate-in']
 
@@ -58,7 +59,7 @@ export default function ClipAnimationComponent({ active = true }) {
 
     let CLASSNAME = ['flex', 'overflow-auto']
     if (!active) {
-        CLASSNAME.push('hidden')
+        CLASSNAME.push('none')
     }
     CLASSNAME = CLASSNAME.join(' ')
 

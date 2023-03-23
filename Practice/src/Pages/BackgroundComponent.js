@@ -19,20 +19,20 @@ export function MyComponent({ layoutClassName, className }) {
     return (<div className={layoutClassName}>
 
         <label className='text-xl'>
-            <input type='checkbox' clas onClick={() => setShow1(!show1)}></input>
+            <input type='checkbox' onClick={() => setShow1(!show1)}></input>
             Hide big picture</label>
 
 
-        {show1 && <div className={'parallax ' + className} style={{ 'background-image': 'url(https://images.unsplash.com/photo-1536782376847-5c9d14d97cc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80)' }}>
+        {show1 && <div className={'parallax ' + className} style={{ 'backgroundImage': 'url(https://images.unsplash.com/photo-1536782376847-5c9d14d97cc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80)' }}>
         </div>}
 
 
         <label className='text-xl'>
-            <input type='checkbox' clas onClick={() => setShow2(!show2)}></input>
+            <input type='checkbox' onClick={() => setShow2(!show2)}></input>
             Hide small picture</label>
 
 
-        {show2 && <div className={'parallax ' + className} style={{ 'background-image': 'url(https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80)' }}>
+        {show2 && <div className={'parallax ' + className} style={{ 'backgroundImage': 'url(https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80)' }}>
         </div>}
 
 
