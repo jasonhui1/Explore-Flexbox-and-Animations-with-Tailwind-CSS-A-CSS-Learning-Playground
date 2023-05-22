@@ -8,19 +8,24 @@ import RightLayout from '../Components/RightLayout';
 export function MyComponent({ layoutClassName, className }) {
     console.log('className', className)
     return (
-        <div className={layoutClassName}>
+        // <div className={layoutClassName}>
 
-            <div className={className} style={{ 'backgroundImage': 'url(https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)' }}>
-            </div>
-            {/* <img className={className} src='https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'></img> */}
+        //         {/* // style={{ 'background-image': 'url(https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)' }}> */}
+        //         <img className={className}  src='https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'></img>
+        // </div>
+        <div className='h-96 w-96 relative rounded-full'>
+
+
+            <img className='absolute w-full h-full bg-cover animate-clip' alt='mountain' src='https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'></img>
+            {/* // style={{ 'background-image': 'url(https://images.unsplash.com/photo-1678727467533-832025188145?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)' }}> */}
         </div>
     );
 }
 
-export default function ClipAnimationComponent({ active = true }) {
+export default function ClipAnimationComponent2({ active = true }) {
     // const [className, setClassName] = useState(['bg-white', 'w-96', 'h-96', 'border-solid', 'border-8', 'border-black', 'overflow-hidden'])
-    const [layoutClassName, setLayoutClassName] = useState(['w-96', 'h-96',])
-    const [className, setClassName] = useState(['h-full', 'w-full',  'bg-cover'])
+    const [layoutClassName, setLayoutClassName] = useState(['w-96', 'h-96', 'relative'])
+    const [className, setClassName] = useState(['h-full', 'w-full', 'bg-cover'])
     const [example, setExample] = useState([])
 
     const handleLayoutClassName = (newName) => {
@@ -40,7 +45,7 @@ export default function ClipAnimationComponent({ active = true }) {
             setClassName(className => className.filter((name) => name !== newName))
         }
     }
-    const animation = ['animate-wiggle', 'animate-clip']
+    const animation = ['animate-wiggle',]
     const animation_in = ['fade-in', 'spin-in-45', 'zoom-in-150', 'slide-in-from-bottom',]
     const animation_inout = ['animate-in']
 
@@ -51,14 +56,9 @@ export default function ClipAnimationComponent({ active = true }) {
     const layoutOptions = ['rounded-full', 'w-full', 'h-full', 'overflow-hidden']
     const examples = []
 
-    examples.push(['duration-1000', 'fade-in', 'zoom-in-150', 'animate-in', 'rounded-full', 'overflow-hidden' ]) //Fade zoom in
-    examples.push(['animate-wiggle', 'rounded-full', 'overflow-hidden' ]) //Wiggle animation
-    examples.push(['duration-1000', 'fade-in', 'slide-in-from-bottom', 'animate-in', 'rounded-full', 'overflow-hidden' ]) // Fill aniation
-    examples.push(['duration-1000', 'fade-in', 'spin-in-45', 'origin-center', 'animate-in', 'w-full', 'overflow-hidden' ]) //Come from 2 direction
-    examples.push(['duration-1000', 'fade-in', 'spin-in-45', 'origin-bottom-left', 'animate-in', 'w-full', 'overflow-hidden' ]) //swirl like
+    examples.push(['duration-1000', 'fade-in', 'zoom-in-150', 'animate-in', 'rounded-full', 'overflow-hidden']) //Fade zoom in
 
-
-    let CLASSNAME = ['flex']
+    let CLASSNAME = ['flex', 'overflow-auto']
     if (!active) {
         CLASSNAME.push('hidden')
     }

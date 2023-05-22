@@ -7,29 +7,41 @@ import AnimationComponent from './Pages/AnimationComponent';
 import ClipAnimationComponent from './Pages/ClipAnimationComponent';
 import BackgroundComponent from './Pages/BackgroundComponent';
 
+import { Routes, Route } from 'react-router-dom'
+import BeforeAfter from './Pages/BeforeAfter';
+import ClipAnimationComponent2 from './Pages/ClipAnimationComponent2';
+
 
 
 export default function App() {
-  const [current, setCurrent] = useState(4)
+  const [current, setCurrent] = useState(0)
 
   const pages = ['Flex', 'Position', 'Transition', 'Animation', 'Clip animation', 'Background']
 
   return (
+    <>
+      <Routes>
+        {/* <Route path='/beforeafter' element={<ClipAnimationComponent2 />} /> */}
 
-    <div className=''>
-      <div className='flex fixed bottom-0 z-10 w-full'>
-        {pages.map((name,i)=>{
-          return <button className='flex-1 btn btn-info opacity-30 hover:opacity-100 text-xl capitalize' onClick={() => setCurrent(i)}>{name}</button>
-        })}
-      </div>
-      <div className='relative space-x-0'>
-        <FlexComponent active={current === 0} />
-        <PositionComponent active={current === 1} />
-        <TransitionComponent active={current === 2} />
-        <AnimationComponent active={current === 3} />
-        <ClipAnimationComponent active={current === 4} />
-        <BackgroundComponent active={current===5}/>
-      </div>
-    </div>
+
+        <Route path='/' element = {      <div className=''>
+        <div className='flex fixed bottom-0 z-10 w-full'>
+          {pages.map((name, i) => {
+            return <button className='flex-1 btn btn-info opacity-30 hover:opacity-100 text-xl capitalize' onClick={() => setCurrent(i)}>{name}</button>
+          })}
+        </div>
+        <div className='relative space-x-0'>
+          <FlexComponent active={current === 0} />
+          <PositionComponent active={current === 1} />
+          <TransitionComponent active={current === 2} />
+          <AnimationComponent active={current === 3} />
+          <ClipAnimationComponent active={current === 4} />
+          <BackgroundComponent active={current === 5} />
+        </div>
+      </div>} />
+      </Routes>
+
+
+    </>
   )
 }

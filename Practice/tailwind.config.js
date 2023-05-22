@@ -25,11 +25,17 @@ module.exports = {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-10deg)' },
           '50%': { transform: 'rotate(10deg)' },
+        },
+
+        clip: {
+          '0%': {	clipPath: 'inset(0% 100% 0% 0%)'},
+          '100%': { clipPath: 'inset(0%)' },
         }
       },
       animation: {
         wave: 'wave 1s ease-in-out infinite',
         wiggle: 'wiggle 1s ease-in-out infinite',
+        clip: 'clip 0.5s ease-in-out',
       }
     },
   },

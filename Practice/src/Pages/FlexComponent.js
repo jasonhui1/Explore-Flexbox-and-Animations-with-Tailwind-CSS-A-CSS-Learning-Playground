@@ -108,11 +108,6 @@ export default function FlexComponent({ active = true }) {
                 </SingleGroupComponent>
 
 
-                <MultipleGroupComponent title='Alignment'>
-                    <PropertyRadioComponents properties={alignProperty} handleClassName={handleClassName} currentExample={example} />
-                    <PropertyRadioComponents properties={itemProperty} handleClassName={handleClassName} currentExample={example} />
-
-                </MultipleGroupComponent>
 
 
                 <MultipleGroupComponent title='Full Viewport Height/ Gap'>
@@ -121,6 +116,11 @@ export default function FlexComponent({ active = true }) {
 
                 </MultipleGroupComponent>
 
+                <MultipleGroupComponent title='Alignment'>
+                    <PropertyRadioComponents properties={alignProperty} handleClassName={handleClassName} currentExample={example} />
+                    <PropertyRadioComponents properties={itemProperty} handleClassName={handleClassName} currentExample={example} />
+
+                </MultipleGroupComponent>
                 <ExamplesComponent examples={examples} setExample={setExample}/>
 
                 <div className='h-12'></div>
