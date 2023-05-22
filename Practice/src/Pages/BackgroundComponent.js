@@ -62,11 +62,12 @@ export default function BackgroundComponent({ active = true }) {
     const repeat = ['bg-repeat', 'bg-no-repeat', 'bg-repeat-round', 'bg-repeat-space']
     const examples = []
 
-    examples.push(['bg-no-repeat', 'bg-contain']) //Show full image
-    examples.push(['bg-no-repeat', 'bg-cover']) //Zoom in
-    examples.push(['bg-repeat-round']) //Stretch to fit
-    examples.push(['bg-fixed', 'bg-right-bottom']) //Some parallax
 
+    examples.push({ properties: ['bg-no-repeat', 'bg-contain'], description: 'resize to shows the entire picture, remove repeat'})
+    examples.push({ properties: ['bg-no-repeat', 'bg-cover'], description: 'fill the element while maintaining its aspect ratio' })
+    // examples.push({ properties: ['bg-repeat-round'], description: 'keep the repeat and stretch the picture to fill the space'? })
+    examples.push({ properties: ['bg-fixed', 'bg-right-bottom'], description: 'some parallax like (try scroll down)' })
+    
 
     let CLASSNAME = ['flex',]
     if (!active) {
@@ -78,7 +79,7 @@ export default function BackgroundComponent({ active = true }) {
         <div className={CLASSNAME}>
             <LeftLayout>
 
-                <SingleGroupComponent title='Attachment, Scroll down when uses fixed, (fixed doesnt work well with size, not sure what the other two properties do) '>
+                <SingleGroupComponent title='Attachment,try scrolling down when uses fixed, (fixed doesnt work well with size, not sure what local/scroll do) '>
                     <PropertyRadioComponents properties={attachment} handleClassName={handleClassName} currentExample={example} />
                 </SingleGroupComponent>
 

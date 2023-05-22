@@ -81,10 +81,12 @@ export default function PositionComponent({ active = true }) {
   const xProperty = ['left-0', 'left-16', 'right-0', 'right-16']
 
   const examples = []
-  examples.push(['sticky', 'top-0'])
-  examples.push(['relative', 'left-16', 'top-16'])
-  examples.push(['parent_relative', 'absolute', 'right-16', 'bottom-16'])
-  examples.push(['fixed', 'bottom-16'])
+  
+  examples.push({properties:['fixed', 'bottom-16'], description:'fix position relative to the viewport when scrolling'})
+  examples.push({properties:['sticky', 'top-0'], description:'fix position relative to the its nearest scrolling ancestor when scrolling'})
+  
+  examples.push({properties:['relative', 'left-16', 'top-16'], description:'positioned relative to its normal position'})
+  examples.push({properties:['parent_relative', 'absolute', 'right-16', 'bottom-16'], description:'positioned relative to the nearest positioned ancestor'})
 
   let CLASSNAME = ['flex']
   if (!active) {

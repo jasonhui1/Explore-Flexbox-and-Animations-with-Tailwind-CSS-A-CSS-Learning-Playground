@@ -36,14 +36,15 @@ export default function AnimationComponent({ active = true }) {
 
   const durationProperty = ['duration-500', 'duration-1000',]
   const examples = []
+  examples.push()
 
-  examples.push(['duration-500', 'animate-pulse',])
-  examples.push(['duration-1000', 'fade-in', 'animate-in'])
-  examples.push(['duration-1000', 'animate-ping', 'repeat-1', 'fill-mode-forwards'])
-  examples.push(['duration-1000', 'fade-in', 'spin-in-45', 'animate-in', 'fill-mode-forwards'])
-  examples.push(['duration-1000', 'spin-out-45', 'animate-out', 'fade-out', 'zoom-out-150', 'slide-out-to-top', 'fill-mode-forwards'])
-
-
+  examples.push({properties:['duration-1000', 'animate-pulse',], description:'basic example 1 (pulse)'})
+  examples.push({properties:['duration-1000', 'fade-in', 'animate-in'], description:'basic example 2 (fades in), uses plugin'})
+  
+  examples.push({properties:['duration-1000', 'animate-ping', 'repeat-1', 'fill-mode-forwards'], description:'basic example 3 - repeat once and hold its style at the last keyframe'})
+  examples.push({properties:['duration-1000', 'fade-in', 'spin-in-45', 'animate-in', 'fill-mode-forwards'], description:'combine animations'})
+  examples.push({properties:['duration-1000', 'spin-out-45', 'animate-out', 'fade-out', 'zoom-out-150', 'slide-out-to-top', 'fill-mode-forwards'], description:'combine animations - animate out'})
+  
 
   let CLASSNAME = ['flex', 'overflow-auto']
   if (!active) {

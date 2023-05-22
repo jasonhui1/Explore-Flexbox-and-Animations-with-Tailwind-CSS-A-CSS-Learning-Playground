@@ -58,6 +58,7 @@ export default function FlexComponent({ active = true }) {
         setChildrenNth(e.target.value)
     }
 
+    // Properties
     const flexProperty = ['flex', 'flex-wrap']
     const flexDirection = ['flex-col', 'flex-row', 'flex-col-reverse', 'flex-row-reverse']
     const gapProperty = ['gap-4', 'gap-8']
@@ -68,12 +69,16 @@ export default function FlexComponent({ active = true }) {
     const flexChildrenProperty = ['flex-1', 'flex-grow', 'flex-shrink']
     const flexNthChildrenProperty = ['flex-1', 'flex-grow', 'flex-grow-0', 'flex-shrink', 'flex-shrink-0', 'flex-initial', 'self-center']
 
+    // Examples
     const examples = []
-    examples.push(['flex', 'flex-wrap', 'gap-8'])
-    examples.push(['flex', 'flex-col', 'flex-wrap', 'gap-8', 'justify-center', 'h-screen', 'items-center'])
-    examples.push(['flex', 'flex-shrink'])
-    examples.push(['flex', 'flex-col', 'flex-grow', 'h-screen'])
-    examples.push(['flex', 'flex-col', 'Nth_flex-grow', 'Nth_self-center', 'h-screen'])
+    examples.push({properties:['flex', 'gap-4'], description:'basic'})
+    examples.push({properties:['flex', 'flex-wrap', 'gap-4'], description:'wrap the buttons when overflow'})
+    examples.push({properties:['flex', 'flex-col', 'flex-wrap', 'gap-8', 'justify-center', 'h-screen', 'items-center'], description:'center in both horizonally and vertically'})
+    
+    
+    examples.push({properties:['flex', 'flex-shrink'], description:'resize the buttons when overflow to fit the full col/row'})
+    examples.push({properties:['flex', 'flex-col', 'flex-grow', 'h-screen'], description:'resize the buttons to fit the full col/row'})
+    examples.push({properties:['flex', 'flex-col', 'Nth_flex-grow', 'Nth_self-center', 'h-screen'], desciption:'specify a children instead of all children'})
 
 
     let CLASSNAME = ['flex']

@@ -20,7 +20,7 @@ export function MyComponent({ layoutClassName, className }) {
 export default function ClipAnimationComponent({ active = true }) {
     // const [className, setClassName] = useState(['bg-white', 'w-96', 'h-96', 'border-solid', 'border-8', 'border-black', 'overflow-hidden'])
     const [layoutClassName, setLayoutClassName] = useState(['w-96', 'h-96',])
-    const [className, setClassName] = useState(['h-full', 'w-full',  'bg-cover'])
+    const [className, setClassName] = useState(['h-full', 'w-full', 'bg-cover'])
     const [example, setExample] = useState([])
 
     const handleLayoutClassName = (newName) => {
@@ -51,11 +51,12 @@ export default function ClipAnimationComponent({ active = true }) {
     const layoutOptions = ['rounded-full', 'w-full', 'h-full', 'overflow-hidden']
     const examples = []
 
-    examples.push(['duration-1000', 'fade-in', 'zoom-in-150', 'animate-in', 'rounded-full', 'overflow-hidden' ]) //Fade zoom in
-    examples.push(['animate-wiggle', 'rounded-full', 'overflow-hidden' ]) //Wiggle animation
-    examples.push(['duration-1000', 'fade-in', 'slide-in-from-bottom', 'animate-in', 'rounded-full', 'overflow-hidden' ]) // Fill aniation
-    examples.push(['duration-1000', 'fade-in', 'spin-in-45', 'origin-center', 'animate-in', 'w-full', 'overflow-hidden' ]) //Come from 2 direction
-    examples.push(['duration-1000', 'fade-in', 'spin-in-45', 'origin-bottom-left', 'animate-in', 'w-full', 'overflow-hidden' ]) //swirl like
+    examples.push({ properties: ['duration-1000', 'fade-in', 'zoom-in-150', 'animate-in', 'rounded-full', 'overflow-hidden'], description: 'basic example 1 ' })
+    examples.push({ properties: ['animate-wiggle', 'rounded-full', 'overflow-hidden'], description: 'basic example 2' })
+    examples.push({ properties: ['duration-1000', 'fade-in', 'slide-in-from-bottom', 'animate-in', 'rounded-full', 'overflow-hidden'], description: 'fill from bottom' })
+    examples.push({ properties: ['duration-1000', 'fade-in', 'spin-in-45', 'origin-center', 'animate-in', 'w-full', 'overflow-hidden'], description: 'spin in - can set transform origin' })
+    // examples.push({ properties: ['duration-1000', 'fade-in', 'spin-in-45', 'origin-bottom-left', 'animate-in', 'w-full', 'overflow-hidden'], description: '' })
+
 
 
     let CLASSNAME = ['flex']

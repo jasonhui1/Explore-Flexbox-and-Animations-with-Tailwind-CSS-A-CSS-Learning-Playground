@@ -9,7 +9,7 @@ export function MyComponent({ className }) {
 }
 
 export default function TransitionComponent({ active = true }) {
-  const [className, setClassName] = useState(['bg-blue-500', 'text-3xl', 'w-96', 'h-96', 'hover:bg-red-500', 'border-solid', 'border-8', 'border-black', 'flex', 'justify-center', 'items-center', 'text-white', 'shadow-lg', 'shadow-orange-300'])
+  const [className, setClassName] = useState(['bg-blue-500', 'text-3xl', 'w-96', 'h-96', 'border-solid', 'border-8', 'border-black', 'flex', 'justify-center', 'items-center', 'text-white', 'shadow-lg', 'shadow-orange-300'])
   const [example, setExample] = useState([])
 
   const handleClassName = (newName) => {
@@ -38,10 +38,11 @@ export default function TransitionComponent({ active = true }) {
 
   const examples = []
 
-  examples.push(['duration-1000', 'hover:scale-150'])
-  examples.push(['delay-100', 'duration-1000', 'hover:rotate-180'])
-  examples.push(['duration-1000', 'hover:bg-opacity-50', 'hover:text-opacity-50', 'hover:border-opacity-20'])
-  examples.push(['duration-1000', 'hover:translate-x-full'])
+  examples.push({properties:['duration-1000', 'hover:scale-150'], description:'basic example 1 - transform'})
+  examples.push({properties:['duration-1000', 'hover:text-opacity-50'], description:'basic example 2 - opacity'})
+  examples.push({properties:['delay-100', 'duration-1000', 'hover:rotate-180'], description:'basic example 3 - with delay'})
+  examples.push({properties:['duration-1000', 'hover:scale-150', 'hover:text-opacity-50', 'hover:border-opacity-20'], description:'combine multiple transitions'})
+
 
   let CLASSNAME = ['flex', 'overflow-auto']
   if (!active) {
