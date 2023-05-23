@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { overrideTailwindClasses } from 'tailwind-override'
 ;
 import LeftLayout from '../Components/LeftLayout';
