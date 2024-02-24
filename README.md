@@ -20,5 +20,4 @@ Each feature contains examples to help you get started.
 3. Click the 'reset' button to deselect all buttons in the same row.
 
 ## Video Demonstration
-
-<iframe src="https://drive.google.com/file/d/1by7jsabRSrGk9TneP0I86QMdgztWvhnt/view?usp=sharing" width="640" height="480"></iframe>
+https://drive.google.com/file/d/1by7jsabRSrGk9TneP0I86QMdgztWvhnt/view?usp=sharing
