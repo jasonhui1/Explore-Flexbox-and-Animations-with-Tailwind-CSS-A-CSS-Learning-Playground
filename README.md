@@ -1,24 +1,23 @@
 # Flexbox and Animation Sandbox with Tailwind CSS
-An application designed to help you learn and experiment with CSS flexbox layouts, basic animations, and more, using React and Tailwind CSS.
+An application designed to help you learn and experiment with CSS flexbox layouts, basic animations, and more, using React and Tailwind CSS. It is recommended to use it alongside the official Tailwind CSS documentation available at https://tailwindcss.com/docs
 
 ## Link
-https://learn-css-jh.netlify.app/
+[Visit the sandbox] https://learn-css-jh.netlify.app/
 
 ## Features
 
-- Flexbox 
-- position 
-- basic transition
-- basic animation  
+- Flexbox
+- Positioning
+- Basic transitions
+- Basic animations
 
-They all contain examples to help you get started.   
-
+Each feature contains examples to help you get started.
 
 ## Usage Instructions
 
-1. **Selecting Styles:**
-   - Click on the various buttons to apply different flexbox styles or animation effects to the elements on the page.
-
+1. A square rounded button indicates that multiple buttons in the same row can be selected.
+2. A more rounded button indicates that only one button in the same row can be selected.
+3. Click the 'reset' button to deselect all buttons in the same row.
 
 ## Getting Started
 ```bash
