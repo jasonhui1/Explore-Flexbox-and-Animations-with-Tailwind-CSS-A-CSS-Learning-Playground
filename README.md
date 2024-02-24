@@ -18,16 +18,3 @@ Each feature contains examples to help you get started.
 1. A square rounded button indicates that multiple buttons in the same row can be selected.
 2. A more rounded button indicates that only one button in the same row can be selected.
 3. Click the 'reset' button to deselect all buttons in the same row.
-
-## Getting Started
-```bash
-npm install
-npm run dev
-```
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-

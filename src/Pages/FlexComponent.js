@@ -78,7 +78,7 @@ export default function FlexComponent({ active = true }) {
     
     examples.push({properties:['flex', 'flex-shrink'], description:'resize the buttons when overflow to fit the full col/row'})
     examples.push({properties:['flex', 'flex-col', 'flex-grow', 'h-screen'], description:'resize the buttons to fit the full col/row'})
-    examples.push({properties:['flex', 'flex-col', 'Nth_flex-grow', 'Nth_self-center', 'h-screen'], desciption:'specify a children instead of all children'})
+    examples.push({properties:['flex', 'flex-col', 'Nth_flex-grow', 'Nth_self-center', 'h-screen'], description:'specify a children instead of all children (default)'})
 
 
     let CLASSNAME = ['flex']
